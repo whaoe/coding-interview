@@ -1,0 +1,153 @@
+/* 补充增强样式：图表切换器、饼图/折线图/水平条形图、语音录音动画、SQL高亮等 */
+.chart-type-switcher {
+  display: inline-flex;
+  background: #E2E8F0;
+  border-radius: 6px;
+  padding: 2px;
+  gap: 2px;
+}
+.chart-type-btn {
+  border: none;
+  background: transparent;
+  color: #475569;
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.15s;
+}
+.chart-type-btn.active {
+  background: #ffffff;
+  color: #2563EB;
+  font-weight: 600;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+.chart-type-btn:hover:not(.active) {
+  color: #1E293B;
+}
+
+/* 水平条形图 */
+.qa-hbar-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 6px 4px;
+}
+.qa-hbar-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+}
+.qa-hbar-label {
+  width: 96px;
+  flex-shrink: 0;
+  color: #334155;
+  font-weight: 500;
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.qa-hbar-track {
+  flex: 1;
+  height: 18px;
+  background: #E2E8F0;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+}
+.qa-hbar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+.qa-hbar-val {
+  width: 85px;
+  flex-shrink: 0;
+  font-weight: 600;
+  color: #1E293B;
+  font-variant-numeric: tabular-nums;
+}
+
+/* 饼图/环形图布局 */
+.qa-pie-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  padding: 8px 12px;
+  flex-wrap: wrap;
+}
+.qa-pie-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 180px;
+}
+.qa-pie-legend-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 13px;
+  color: #334155;
+}
+.qa-pie-legend-left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.qa-pie-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* 麦克风录音脉冲态 */
+.qa-mic-btn.recording {
+  background: #FEE2E2 !important;
+  color: #DC2626 !important;
+  animation: micPulse 1.2s ease-in-out infinite;
+}
+@keyframes micPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.35); }
+  50% { box-shadow: 0 0 0 6px rgba(220, 38, 38, 0); }
+}
+
+/* TTS 播报激活态 */
+.qa-ai-footer .qa-ai-actions button.speaking {
+  color: #2563EB !important;
+  background: #DBEAFE !important;
+}
+
+/* 顶部智能问数操作按钮 */
+.qa-top-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 30px;
+  padding: 0 10px;
+  border-radius: 6px;
+  border: 1px solid #E2E8F0;
+  background: #F8FAFC;
+  color: #334155;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.qa-top-chip:hover {
+  border-color: #3B82F6;
+  color: #2563EB;
+  background: #EFF6FF;
+}
+.qa-top-chip.active {
+  border-color: #2563EB;
+  color: #2563EB;
+  background: #DBEAFE;
+}
